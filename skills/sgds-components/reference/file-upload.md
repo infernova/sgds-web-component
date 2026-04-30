@@ -171,7 +171,7 @@ No CSS styling modifications — custom properties and CSS parts are not exposed
 
 | Slot | Purpose |
 |---|---|
-| *(default)* | Label text shown on the upload button (e.g. `"Choose File"`) |
+| *(default)* | **Required:** Button label text shown on the upload button (e.g. `"Choose files"`, `"Select PDF"`, `"Upload document"`). Without slot content, the button appears as icon-only, which is not acceptable for accessibility and usability. |
 
 ## Events
 
@@ -181,6 +181,10 @@ No CSS styling modifications — custom properties and CSS parts are not exposed
 | `sgds-remove-file` | `{ file: File, files: FileList }` | A file is removed | `file` is the removed file; `files` is the remaining list |
 | `sgds-change` | `FileList` | Any change to the file set (add or remove) | Detail is the full current file list |
 | `sgds-files-selected` | `FileList` | Any change to the file set | **Deprecated since 3.19.0** in favour of `sgds-change` — still fires for backwards compatibility |
+
+## Form Layout Context
+
+`<sgds-file-upload>` is a **full-width form component** — it must take the entire form width and cannot share a row with any other component. For detailed form pattern guidance (when to pair fields, spacing, responsive behavior), see the [sgds-blocks form layout skill](../sgds-blocks/reference/form.md).
 
 ---
 
