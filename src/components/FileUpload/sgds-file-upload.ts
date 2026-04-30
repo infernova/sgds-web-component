@@ -30,7 +30,7 @@ export type {
  *
  * @slot default - Label for file upload button (used in default variant)
  *
- * @event sgds-files-selected - Emitted whenever the file set changes (files added or removed). Access the files with event.detail  @deprecated Use sgds-add-files for file additions or sgds-change for all file set changes instead
+ * @event sgds-files-selected - (@deprecated) Deprecated since 3.19.0 in favour of sgds-change. Emitted whenever the file set changes (files added or removed). Access the files with event.detail.
  * @eventDetail {ISgdsFileUploadFilesSelectedEventDetail} sgds-files-selected
  * @event sgds-add-files - Emitted when files are added to the upload. Access the files with event.detail
  * @eventDetail {ISgdsFileUploadAddFilesEventDetail} sgds-add-files
@@ -68,7 +68,7 @@ export class SgdsFileUpload extends SgdsFormValidatorMixin(FormControlElement) {
   /** Variant of the file upload component: "default" or "drag-and-drop" */
   @property({ type: String, reflect: true }) variant: "default" | "drag-and-drop" = "default";
 
-  /** Disables native and sgds validation for the component. */
+  /** Disables native and sgds validation for the component. Use this when you want to do custom validation */
   @property({ type: Boolean, reflect: true }) noValidate = false;
 
   @state()
@@ -389,7 +389,12 @@ export class SgdsFileUpload extends SgdsFormValidatorMixin(FormControlElement) {
     }
 
     return html`
-      <sgds-button variant="outline" ?disabled=${this.disabled} @click=${this._handleClick} @sgds-blur=${this._handleBlur}>
+      <sgds-button
+        variant="outline"
+        ?disabled=${this.disabled}
+        @click=${this._handleClick}
+        @sgds-blur=${this._handleBlur}
+      >
         <slot>Choose files</slot>
         <sgds-icon slot="rightIcon" name="upload"></sgds-icon>
       </sgds-button>
@@ -447,7 +452,7 @@ export class SgdsFileUpload extends SgdsFormValidatorMixin(FormControlElement) {
         ${this._renderLabel()} ${this._renderUploadZone()}
         ${this.hasFeedback && this.invalid ? this._renderFeedback() : this._renderHintText()}
       </div>
-      <ul class="file-upload-list ${this.selectedFiles.length > 0 ? 'has-files' : ''}">
+      <ul class="file-upload-list ${this.selectedFiles.length > 0 ? "has-files" : ""}">
         ${listItems}
       </ul>
     `;
