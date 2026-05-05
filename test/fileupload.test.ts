@@ -1789,7 +1789,14 @@ describe("sgds-file-upload dialog and drop validation behavior", () => {
 
   it("should clear invalid state when files are dropped on a drag-and-drop variant that starts invalid", async () => {
     const el = await fixture<SgdsFileUpload>(
-      html`<sgds-file-upload variant="drag-and-drop" multiple required hasFeedback invalid invalidFeedback="Please upload at least one file"></sgds-file-upload>`
+      html`<sgds-file-upload
+        variant="drag-and-drop"
+        multiple
+        required
+        hasFeedback
+        invalid
+        invalidFeedback="Please upload at least one file"
+      ></sgds-file-upload>`
     );
     await el.updateComplete;
 
