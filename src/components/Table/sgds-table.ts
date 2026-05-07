@@ -93,6 +93,7 @@ export class SgdsTable extends SgdsElement {
 
   connectedCallback() {
     super.connectedCallback();
+    this.setAttribute("role", "table");
   }
 
   updated() {

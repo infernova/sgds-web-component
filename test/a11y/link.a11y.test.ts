@@ -4,9 +4,7 @@ import { html } from "lit";
 
 describe("Link a11y", () => {
   it("sgds-link should be accessible", async () => {
-    const el = await fixture(html`
-      <sgds-link><a href="#">Visit our website</a></sgds-link>
-    `);
+    const el = await fixture(html` <sgds-link><a href="#">Visit our website</a></sgds-link> `);
     await expect(el).to.be.accessible();
   });
 });

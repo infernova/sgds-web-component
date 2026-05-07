@@ -4,9 +4,7 @@ import { html } from "lit";
 
 describe("Skeleton a11y", () => {
   it("sgds-skeleton should be accessible", async () => {
-    const el = await fixture(html`
-      <sgds-skeleton></sgds-skeleton>
-    `);
+    const el = await fixture(html` <sgds-skeleton></sgds-skeleton> `);
     await expect(el).to.be.accessible();
   });
 });

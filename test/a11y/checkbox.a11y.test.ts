@@ -4,16 +4,12 @@ import { html } from "lit";
 
 describe("Checkbox a11y", () => {
   it("sgds-checkbox should be accessible", async () => {
-    const el = await fixture(html`
-      <sgds-checkbox name="agree" value="yes">I agree to the terms</sgds-checkbox>
-    `);
+    const el = await fixture(html` <sgds-checkbox name="agree" value="yes">I agree to the terms</sgds-checkbox> `);
     await expect(el).to.be.accessible();
   });
 
   it("sgds-checkbox disabled should be accessible", async () => {
-    const el = await fixture(html`
-      <sgds-checkbox name="agree" value="yes" disabled>Disabled option</sgds-checkbox>
-    `);
+    const el = await fixture(html` <sgds-checkbox name="agree" value="yes" disabled>Disabled option</sgds-checkbox> `);
     await expect(el).to.be.accessible();
   });
 

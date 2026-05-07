@@ -4,9 +4,7 @@ import { html } from "lit";
 
 describe("Input a11y", () => {
   it("sgds-input should be accessible", async () => {
-    const el = await fixture(html`
-      <sgds-input label="Full name" inputId="name-input"></sgds-input>
-    `);
+    const el = await fixture(html` <sgds-input label="Full name" inputId="name-input"></sgds-input> `);
     await expect(el).to.be.accessible();
   });
 
@@ -25,9 +23,7 @@ describe("Input a11y", () => {
   });
 
   it("sgds-textarea should be accessible", async () => {
-    const el = await fixture(html`
-      <sgds-textarea label="Comments" textareaId="comments-textarea"></sgds-textarea>
-    `);
+    const el = await fixture(html` <sgds-textarea label="Comments" textareaId="comments-textarea"></sgds-textarea> `);
     await expect(el).to.be.accessible();
   });
 });

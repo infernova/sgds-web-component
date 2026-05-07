@@ -4,11 +4,7 @@ import { html } from "lit";
 
 describe("Alert a11y", () => {
   it("sgds-alert should be accessible", async () => {
-    const el = await fixture(html`
-      <sgds-alert show>
-        This is an alert message.
-      </sgds-alert>
-    `);
+    const el = await fixture(html` <sgds-alert show> This is an alert message. </sgds-alert> `);
     await expect(el).to.be.accessible();
   });
 

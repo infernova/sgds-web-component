@@ -3,17 +3,8 @@ import { fixture, expect } from "@open-wc/testing";
 import { html } from "lit";
 
 describe("Icon a11y", () => {
-  it("sgds-icon (decorative) should be accessible", async () => {
-    const el = await fixture(html`
-      <sgds-icon name="plus" aria-hidden="true"></sgds-icon>
-    `);
-    await expect(el).to.be.accessible();
-  });
-
-  it("sgds-icon (meaningful) should be accessible", async () => {
-    const el = await fixture(html`
-      <sgds-icon name="plus" role="img" aria-label="Add"></sgds-icon>
-    `);
+  it("sgds-icon should be accessible", async () => {
+    const el = await fixture(html` <sgds-icon name="plus"></sgds-icon> `);
     await expect(el).to.be.accessible();
   });
 

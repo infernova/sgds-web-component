@@ -27,7 +27,7 @@ describe("Card a11y", () => {
   it("sgds-image-card should be accessible", async () => {
     const el = await fixture(html`
       <sgds-image-card>
-        <img slot="image" alt="Sample image" src="https://placehold.co/467x300">
+        <img slot="image" alt="Sample image" src="https://placehold.co/467x300" />
         <span slot="title">Image card title</span>
         <p slot="description">Image card description</p>
       </sgds-image-card>
@@ -38,7 +38,7 @@ describe("Card a11y", () => {
   it("sgds-thumbnail-card should be accessible", async () => {
     const el = await fixture(html`
       <sgds-thumbnail-card>
-        <img slot="thumbnail" alt="Thumbnail" width="64" height="64" src="https://placehold.co/64x64">
+        <img slot="thumbnail" alt="Thumbnail" width="64" height="64" src="https://placehold.co/64x64" />
         <span slot="title">Thumbnail card title</span>
         <p slot="description">Thumbnail card description</p>
       </sgds-thumbnail-card>
