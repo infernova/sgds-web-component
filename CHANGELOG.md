@@ -1,3 +1,129 @@
+## v3.18.1 (2026-05-04)
+
+### Feat
+
+- **Badge**: update badge font size and line height [run-chromatic] (#635)
+- **Badge**: update badge font size and line height
+
+### Fix
+
+- **Masthead**: provide fallback value for icons size and all variable… [skip-cd][run-chromatic] (#640)
+- **Masthead**: provide fallback value for icons size and all variables used
+- **Accordion**: update caret icon size for spacious density
+- **Accordion**: update typography styles for compact and spacious density
+
+## v3.18.0 (2026-04-29)
+
+### Feat
+
+- **Skills**: rename skill to sgds-blocks, sgds-templates, sgds-patterns
+- **Skill**: add sgds-blocks and sgds-patterns
+- **Blocks, Patterns, Templates**: by andy teng [skip-cd] (#627)
+- **block**: add call to action blocks [skip-cd] (#620)
+- **block**: add call to action blocks
+- **Blocks**: form patterns skills
+- **Form**: blocks
+- **Pattern, Blocks, Template**: new typograhy patterns
+- **Blocks**: new blocks for landing and general pages
+- **skills**: add sgds-writing content style guide (#616) [skip-cd]
+- **skills**: add sgds-writing content style guide
+- **Alert**: visual refinement on border and new action slot [skip-cd][run-chromatic] (#604)
+- **Alert**: visual refinement on border and new action slot
+
+### Fix
+
+- **dropdown menu**: allow slotted element to fill parent width via flex grow [skip-cd] [run-chromatic] (#626)
+- **dropdown menu**: allow slotted element to set its width and fix menu not closing when clicking in toggler container
+- **cards**: fix stretchedLink card not reading the hyperlink attributes
+- **mainnav**: prevent non-collapsible slot from taking space when it is empty
+- **dropdown menu**: set max width on dropdown menu [run-chromatic] (#629)
+- **dropdown menu**: set max width on dropdown menu
+- **Skills**: keep using text-muted instead of text-subtle [skip-cd] (#622)
+- **Skills**: keep using text-muted instead of text-subtle
+- **docs**: resolve broken internal skill references in documentation
+- **Subnav**: activate z-index and lockBodyScroll when menu is open [skip-cd] [run-chromatic] (#613)
+- **subnav**: apply position relative to activate z-index
+- **subnav**: prevent body hidden overflow from breaking subnav stickiness
+- **select**: hide input caret and update cursor [skip-cd] (#614)
+- **select**: hide input caret and update cursor
+- **Sidebar, Subnav**: sidebar and sidenav to be on new z index sticky layer (#612)
+- **Sidebar, Subnav**: sidebar and sidenav to be on new z index sticky layer
+
+## v3.17.0 (2026-04-17)
+
+### Feat
+
+- **Accordion, AccordionItem**:  new spacious density, responsive typography, badge and icon slots [run-chromatic] (#591)
+- **Accordion**: new spacious density and slot
+- **Tab**: added new props to control divider
+- **Form**: apply min width 160 to combobox, input, select
+- **Sidebar**: new sidebar component [skip-cd] (#570)
+- **Sidebar**: added handling for 3 level of side bar option
+- *****: react types definition for better intellisense and custom element manifest [skip-cd] (#586)
+
+### Fix
+
+- **Tabs, Toast, Radio**: new autofocus prop on Radio, styling fixes for Tabs and Toast [skip-cd] (#602)
+- *****: z-index in components [run-chromatic][skip-cd] (#585)
+- **Alert**: close button colour fixed dark in warning filled [run-chromatic] (#594)
+- **Alert**: visual refinements
+- **Alert**: close button colour fixed dark in warning filled
+- **Toast**: ui enhancements on spacings,icon, link sizes, typography [skip-cd][run-chromatic] (#595)
+- **Toast**: ui enhancements on spacings,icon, link sizes, typography
+- **Alert**: ui enhancements on spacings, icon , link sizes, typography
+- **Tooltip**: z index management
+- **Subnav**: z-index management
+- **Dropdown**: menu z-index management
+- **ToastContainer**: z-index management
+- **Modal**: z-index management
+- **Mainnav**: z-index management
+- **Drawer**: z-index management
+- **Sidenav**: remove outer most padding
+
+### Refactor
+
+- **Accordion**: header button always semibold
+- **Accordino**: compact content paddings
+- **Accordion**: compact button padding increase tomd
+- **Accordion**: use responsive tokens for the typography of accordion items
+- *****: define display block at sgds element by default and allo… [run-chromatic] (#593)
+- **Skills**: refine sidebar restricting width (#597)
+- **Skills**: refine sidebar restricting width
+- **Skills**: improve skill (#598)
+- **Skills**: improve skill
+- **Subnav**: move z-index to light dom
+- *****: define display block at sgds element by default and allow ovveride on component level
+- **Skills**: typography content
+
+## v3.16.0 (2026-04-02)
+
+### Feat
+
+- *****: add custom elements manifest into the repository
+- *****: typescript support and intellisense for react users
+- **Theming**: govtech brand colours (#584)
+- **themes**: add gt colour schemes
+- **Utility**: added new elevation tokens [run-chromatic][skip-cd] (#580)
+- **Utility**: added new elevation tokens
+- **Modal**: make close button optional [run-chromatic][skip-cd] (#583)
+- **Playground**: updated playground, to be dynamic and added all com… (#582)
+- **Playground**: updated playground, to be dynamic and added all components
+- **Skills**: update modal noCloseButton in skills
+- **Modal**: noCloseButton prop to make close button optional
+- **Skills**: more explicit token naming for border and text colors
+- **Skills**: always use utilties to style rule
+
+### Fix
+
+- **Skills**: add rule not to use raw tailiwind max widht on containers
+- **Accordion**: caret size sgds icon based on density using reactive props
+
+### Refactor
+
+- **Skills**: nextjs instructions enhancements [run-chromatic] (#581)
+- **Skills**: add a note to use divider compoentn over border wfor divider
+- **Skills**: explicitly no href prop
+
 ## v3.15.0 (2026-03-20)
 
 ### Feat
@@ -46,10 +172,12 @@
 - **Utility**: responsive tokens
 
 ### Fix
-- **Mainnav, Masthead, SystemBanner**: update the alignment of the header components
+
+- *****: update the alignment of the header components [run-chromatic][skip-cd] (#566)
+- *****: update the alignment of the header components
 - **Pagination**: active color and button color[run-chromatic]  (#567)
-- **Footer** replace container query with media query to resolve responsive issue [run-chromatic] (#563)
-- **Footer** replace container query with media query to resolve responsive issue
+- replace container query with media query to resolve responsive issue [run-chromatic] (#563)
+- replace container query with media query to resolve responsive issue
 - **Pagination**: active color and button color
 
 ## v3.13.1 (2026-03-06)
@@ -81,8 +209,6 @@
 - **Drawer**: move padding from outer container to inner header and body container respectively
 
 ## v3.12.0 (2026-03-02)
-
-## 3.12.0 (2026-03-02)
 
 ### Feat
 

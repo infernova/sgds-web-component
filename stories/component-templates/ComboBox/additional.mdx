@@ -1,0 +1,145 @@
+## Populating the menu items
+
+### Default slot
+
+Populate menu list of the combo box with `<sgds-combo-box-option>`.
+
+<Canvas of={ComboBoxStories.ComboBoxDefaultSlot}>
+  <Story of={ComboBoxStories.ComboBoxDefaultSlot} />
+</Canvas>
+
+### `menuList` property (deprecated)
+
+Populate menu list of the combo box with `menuList` property.
+
+<Canvas of={ComboBoxStories.ComboBoxMenuList}>
+  <Story of={ComboBoxStories.ComboBoxMenuList} />
+</Canvas>
+
+## MultiSelect ComboBox
+
+Set `multiSelect` to true for a multi-select combo box.
+
+<Canvas of={ComboBoxStories.ComboBoxMultiSelect}>
+  <Story of={ComboBoxStories.ComboBoxMultiSelect} />
+</Canvas>
+
+## Clearable ComboBox
+
+Set `clearable` to true for a clearable combo box. The clearable button will appear on `focus` when there is a `value`.
+
+<Canvas of={ComboBoxStories.ComboBoxMenuListClearable}>
+  <Story of={ComboBoxStories.ComboBoxMenuListClearable} />
+</Canvas>
+
+## Loading state
+
+Set `loading` to true to show loading spinner in the combo box menu.
+
+<Canvas of={ComboBoxStories.Loading}>
+  <Story of={ComboBoxStories.Loading} />
+</Canvas>
+
+## Customising the filter function
+
+`SgdsComboBox` contains the `filterFunction` prop that is called on each item's label in the `menuList` whenever the input value changes, to determine whether an item should be displayed in the dropdown menu based on the input value.
+
+### filterFunction
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>inputValue</td>
+      <td>string</td>
+      <td>The value in the input box</td>
+    </tr>
+    <tr>
+      <td>menuItem</td>
+      <td>`{label: string, value: string}`</td>
+      <td>An item in the menuList</td>
+    </tr>
+  </tbody>
+</table>
+
+#### Returns:
+
+`boolean` value indicating if the `menuItem` should be displayed in the dropdown menu, given the `inputValue`.
+
+#### Default Value:
+
+A filter that displays items that contain a prefix that matches the input value:
+
+**JavaScript Code**
+
+```
+(inputValue, menuItem) => {
+    const itemLowerCase = menuItem.label.toLowerCase();
+    const valueLower = inputValue.toLowerCase();
+    return itemLowerCase.startsWith(valueLower);
+}
+```
+
+<Canvas of={ComboBoxStories.ComboBoxDefaultFilter}>
+  <Story of={ComboBoxStories.ComboBoxDefaultFilter} />
+</Canvas>
+
+### Example usage
+
+A filter displays items that contain input value as substring.
+
+**JavaScript Code**
+
+```
+const comboBox = document.querySelector('sgds-combo-box');
+comboBox.filterFunction = (inputValue, menuItem) => {
+    return  menuItem.label.toLowerCase().includes(inputValue)
+}
+```
+
+<Canvas of={ComboBoxStories.ComboBoxCustomFilter}>
+  <Story of={ComboBoxStories.ComboBoxCustomFilter} />
+</Canvas>
+
+## Access input's display value via custom event: sgds-input
+
+Hook onto the custom event: `sgds-input` to obtain the display value of the input 
+
+<Canvas of={ComboBoxStories.AccessDisplayValue}>
+  <Story of={ComboBoxStories.AccessDisplayValue} />
+</Canvas>
+
+### Types
+
+```ts
+
+import type { ISgdsComboBoxInputEventDetail } from '@govtechsg/sgds-web-component/components/ComboBox/sgds-combo-box';
+
+const inputHandler = (e: CustomEvent<ISgdsComboBoxInputEventDetail>) => {
+  const displayValue = e.detail.displayValue
+}
+
+```
+
+## Asynchronous ComboBox
+
+Asynchronous ComboBox search is for filtering remotely via an API request. The filtering is done through the response of API requests.
+Set the `async` attribute to true. You can then hook onto the `sgds-input` event to listen for input changes and make API requests accordingly.
+
+
+  - Use `loading` property to show loading spinner while waiting for API response.
+  - Use `emptyMenuAsync` property to show "No options" when there are no results from the API response.
+  - Populate the combo box options based on the API response.
+
+<Canvas of={ComboBoxStories.AsyncCombobox}>
+  <Story of={ComboBoxStories.AsyncCombobox} />
+</Canvas>
+
+  [React demo](https://codesandbox.io/p/github/clukhei/sgds-asynchronous-combo-box-demo)
+
