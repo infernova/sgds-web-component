@@ -43,10 +43,14 @@ const Template = () => html`
   <div class="sgds:flex sgds:flex-col">
     <main>
       <div class="sgds-container sgds:py-layout-md">
-        <div class="sgds-grid" style="gap: var(--sgds-gap-layout-md); align-items: stretch;">
-          <aside class="content-placeholder sgds:border sgds:border-muted sgds-col-3 sgds-col-sm-8 sgds-col-lg-3"></aside>
+        <div class="sgds-grid sgds:gap-layout-md sgds:items-stretch">
+          <aside
+            class="content-placeholder sgds:border sgds:border-muted sgds-col-3 sgds-col-sm-8 sgds-col-lg-3"
+          ></aside>
           <div class="content-placeholder sgds:border sgds:border-muted sgds-col-6 sgds-col-sm-8 sgds-col-lg-6"></div>
-          <aside class="content-placeholder sgds:border sgds:border-muted sgds-col-3 sgds-col-sm-8 sgds-col-lg-3"></aside>
+          <aside
+            class="content-placeholder sgds:border sgds:border-muted sgds-col-3 sgds-col-sm-8 sgds-col-lg-3"
+          ></aside>
         </div>
       </div>
     </main>

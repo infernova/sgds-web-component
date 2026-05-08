@@ -81,7 +81,9 @@ const Template = () => html`
                 <sgds-link variant="neutral" size="sm"><a href="#">Terms of Use</a></sgds-link>
                 <sgds-link variant="neutral" size="sm"><a href="#">Contact Us</a></sgds-link>
               </div>
-              <p class="sgds:text-label-sm sgds:text-subtle sgds:m-0">&copy; ${new Date().getFullYear()}, Government of Singapore</p>
+              <p class="sgds:text-label-sm sgds:text-subtle sgds:m-0">
+                &copy; ${new Date().getFullYear()}, Government of Singapore
+              </p>
             </div>
           </div>
         </footer>

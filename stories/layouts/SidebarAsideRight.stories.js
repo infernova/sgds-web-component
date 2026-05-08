@@ -71,9 +71,11 @@ const Template = () => html`
       ${sidebarNav}
       <div class="sgds:flex sgds:flex-col sgds:flex-1 sgds:overflow-y-auto">
         <div class="sgds-container-sidebar sgds:py-layout-md sgds:flex-1">
-          <div class="sgds-grid" style="gap: var(--sgds-gap-layout-md); align-items: stretch;">
+          <div class="sgds-grid sgds:gap-layout-md sgds:items-stretch">
             <div class="content-placeholder sgds:border sgds:border-muted sgds-col-8 sgds-col-sm-8 sgds-col-lg-8"></div>
-            <aside class="content-placeholder sgds:border sgds:border-muted sgds-col-4 sgds-col-sm-8 sgds-col-lg-4"></aside>
+            <aside
+              class="content-placeholder sgds:border sgds:border-muted sgds-col-4 sgds-col-sm-8 sgds-col-lg-4"
+            ></aside>
           </div>
         </div>
         <footer class="sgds:bg-default">
@@ -84,7 +86,9 @@ const Template = () => html`
                 <sgds-link variant="neutral" size="sm"><a href="#">Terms of Use</a></sgds-link>
                 <sgds-link variant="neutral" size="sm"><a href="#">Contact Us</a></sgds-link>
               </div>
-              <p class="sgds:text-label-sm sgds:text-subtle sgds:m-0">&copy; ${new Date().getFullYear()}, Government of Singapore</p>
+              <p class="sgds:text-label-sm sgds:text-subtle sgds:m-0">
+                &copy; ${new Date().getFullYear()}, Government of Singapore
+              </p>
             </div>
           </div>
         </footer>
