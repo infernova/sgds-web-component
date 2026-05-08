@@ -29,7 +29,7 @@ export class SgdsSidebarItem extends SidebarElement {
           active: this._selected
         })}
         @click=${() => this._handleClick()}
-        aria-label=${ifDefined((this.title || this.name) || undefined)}
+        aria-label=${ifDefined(this.title || this.name || undefined)}
         name=${this.name}
         tabindex=${this._hidden ? -1 : 0}
         role="button"
