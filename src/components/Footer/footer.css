@@ -167,64 +167,73 @@ slot:not([name])::slotted(*) {
 }
 
 /* Sidebar detected: viewport is wide but container is narrower (sidebar taking space) */
-/* Match .sgds-container-sidebar values */
-
+/* Match .sgds-container-sidebar values. 288px is the width of sidebar , 72px is the width of collapsed sidebar */
+/* 768-288 */
 @media (min-width: 768px) {
-  @container (max-width: 767px) {
+  @container (min-width: 480px) {
     .footer-top,
     .footer-bottom {
       max-width: calc(100% - 96px);
     }
   }
 }
-
+/* 768-72 */
+@media (min-width: 768px) {
+  @container (min-width: 696px) {
+    .footer-top,
+    .footer-bottom {
+      max-width: calc(100% - 96px);
+    }
+  }
+}
+/* 1024-288 */
 @media (min-width: 1024px) {
-  @container (max-width: 1023px) {
+  @container (min-width: 736px) {
     .footer-top,
     .footer-bottom {
       max-width: var(--sgds-dimension-840);
     }
   }
 }
-
+/* 1024-72 */
+@media (min-width: 1024px) {
+  @container (min-width: 952px) {
+    .footer-top,
+    .footer-bottom {
+      max-width: var(--sgds-dimension-840);
+    }
+  }
+}
+/* 1280-288 */
 @media (min-width: 1280px) {
-  @container (max-width: 1279px) {
+  @container (min-width: 992px) {
     .footer-top,
     .footer-bottom {
       max-width: var(--sgds-dimension-888);
     }
   }
 }
-
+/* 1280-72 */
+@media (min-width: 1280px) {
+  @container (min-width: 1208px) {
+    .footer-top,
+    .footer-bottom {
+      max-width: var(--sgds-dimension-888);
+    }
+  }
+}
+/* 1440-288 */
 @media (min-width: 1440px) {
-  @container (max-width: 1439px) {
+  @container (min-width: 1152px) {
     .footer-top,
     .footer-bottom {
       max-width: var(--sgds-dimension-1024);
     }
   }
 }
-
-@media (min-width: 1728px) {
-  @container (max-width: 1727px) {
-    .footer-top,
-    .footer-bottom {
-      max-width: var(--sgds-dimension-1024);
-    }
-  }
-}
-
-@media (min-width: 2016px) {
-  @container (max-width: 2015px) {
-    .footer-top,
-    .footer-bottom {
-      max-width: var(--sgds-dimension-1024);
-    }
-  }
-}
-
-@media (min-width: 2304px) {
-  @container (max-width: 2303px) {
+/* 1440-72 */
+@media (min-width: 1440px) {
+  @container (min-width: 1368px) {
     .footer-top,
     .footer-bottom {
       max-width: var(--sgds-dimension-1024);
