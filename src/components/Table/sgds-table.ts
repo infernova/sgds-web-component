@@ -93,7 +93,6 @@ export class SgdsTable extends SgdsElement {
 
   connectedCallback() {
     super.connectedCallback();
-    this.setAttribute("role", "table");
   }
 
   updated() {
@@ -170,13 +169,15 @@ export class SgdsTable extends SgdsElement {
         })}
         tabindex="0"
       >
-        <slot id="table-slot" class=${classMap({ table: true, "no-border": !this.hasDefaultSlot })}></slot>
+        <div role="table">
+          <slot id="table-slot" class=${classMap({ table: true, "no-border": !this.hasDefaultSlot })}></slot>
 
-        ${!this.hasDefaultSlot
-          ? html`<table class="table">
-              ${this._renderTable()}
-            </table>`
-          : ""}
+          ${!this.hasDefaultSlot
+            ? html`<table class="table">
+                ${this._renderTable()}
+              </table>`
+            : ""}
+        </div>
       </div>
     `;
   }

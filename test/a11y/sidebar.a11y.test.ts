@@ -6,13 +6,11 @@ describe("Sidebar a11y", () => {
   it("sgds-sidebar should be accessible", async () => {
     const el = await fixture(html`
       <sgds-sidebar>
-        <sgds-sidebar-item>
+        <sgds-sidebar-item title="Dashboard">
           <sgds-icon slot="icon" name="house"></sgds-icon>
-          Dashboard
         </sgds-sidebar-item>
-        <sgds-sidebar-item>
+        <sgds-sidebar-item title="Settings">
           <sgds-icon slot="icon" name="gear"></sgds-icon>
-          Settings
         </sgds-sidebar-item>
       </sgds-sidebar>
     `);

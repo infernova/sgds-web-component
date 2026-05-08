@@ -449,8 +449,7 @@ export class SgdsSidebar extends SgdsElement {
                     tone="neutral"
                     size="sm"
                     @click=${this.toggleCollapsed}
-                    aria-label=${this._sidebarCollapsed ? "Expand sidebar" : "Collapse sidebar"}
-                    aria-expanded=${!this._sidebarCollapsed}
+                    .ariaLabel=${this._sidebarCollapsed ? "Expand sidebar" : "Collapse sidebar"}
                   ></sgds-icon-button>`
                 : nothing}
             </div>
@@ -476,8 +475,7 @@ export class SgdsSidebar extends SgdsElement {
                 tone="neutral"
                 size="sm"
                 @click=${() => (this._showDrawer = false)}
-                aria-label=${"Close drawer"}
-                aria-expanded=${this._showDrawer}
+                .ariaLabel=${"Close drawer"}
               ></sgds-icon-button>`
             : nothing}
           ${this._drawerItems}

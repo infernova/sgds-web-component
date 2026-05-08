@@ -204,7 +204,7 @@ export class SgdsFileUpload extends SgdsFormValidatorMixin(FormControlElement) {
         <div class="file-upload-container">
           ${this._renderLabel()}
           <sgds-button variant="outline" ?disabled=${this.disabled} @click=${this._handleClick}>
-            <label for=${this._controlId}><slot></slot></label>
+            <label for=${this._controlId}><slot>Choose a file</slot></label>
             <sgds-icon slot="rightIcon" name="upload"></sgds-icon>
           </sgds-button>
           ${this.hasFeedback && this.invalid ? this._renderFeedback() : this._renderHintText()}
