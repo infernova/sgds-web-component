@@ -96,7 +96,8 @@ slot:not([name])::slotted(*) {
 
 .footer-copyrights {
   color: var(--sgds-color-fixed-light);
-  font-size: var(--sgds-font-size-14);
+  font-size: var(--sgds-font-size-label-sm);
+  line-height: var(--sgds-line-height-2-xs)
 }
 
 /* Non-sidebar (default): match .sgds-container */
@@ -135,8 +136,8 @@ slot:not([name])::slotted(*) {
   }
 
   slot[name="title"]::slotted(*) {
-    font-size: var(--sgds-font-size-28) !important;
-    line-height: var(--sgds-line-height-36) !important;
+    font-size: var(--sgds-font-size-heading-md) !important;
+    line-height: var(--sgds-line-height-md) !important;
   }
 
   .footer-mandatory-links ul {
