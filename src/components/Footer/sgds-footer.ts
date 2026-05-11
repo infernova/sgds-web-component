@@ -4,6 +4,7 @@ import { classMap } from "lit/directives/class-map.js";
 import SgdsLink from "../Link/sgds-link";
 import SgdsElement from "../../base/sgds-element";
 import { HasSlotController } from "../../utils/slot";
+import { watch } from "../../utils/watch";
 import footerStyle from "./footer.css";
 import type { SgdsFooterItem } from "./sgds-footer-item";
 
@@ -74,6 +75,14 @@ export class SgdsFooter extends SgdsElement {
   private _handleItemsSlotChange(e: Event) {
     const assignedElements = (e.target as HTMLSlotElement).assignedElements();
     assignedElements.forEach(el => {
+      (el as SgdsFooterItem).tone = this.tone;
+    });
+  }
+
+  @watch("tone", { waitUntilFirstUpdate: true })
+  _handleToneChange() {
+    const itemsSlot = this.shadowRoot?.querySelector('slot[name="items"]') as HTMLSlotElement | null;
+    itemsSlot?.assignedElements().forEach(el => {
       (el as SgdsFooterItem).tone = this.tone;
     });
   }
