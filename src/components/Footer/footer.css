@@ -166,77 +166,33 @@ slot:not([name])::slotted(*) {
   }
 }
 
-/* Sidebar detected: viewport is wide but container is narrower (sidebar taking space) */
-/* Match .sgds-container-sidebar values. 288px is the width of sidebar , 72px is the width of collapsed sidebar */
-/* 768-288 */
+/* Sidebar detected: .sidebar class added by JS when a non-overlay sgds-sidebar exists */
+/* Match .sgds-container-sidebar values using media queries (viewport-based, same as grid.css) */
+
 @media (min-width: 768px) {
-  @container (min-width: 480px) {
-    .footer-top,
-    .footer-bottom {
-      max-width: calc(100% - 96px);
-    }
+  .footer-top.sidebar,
+  .footer-bottom.sidebar {
+    max-width: calc(100% - 96px);
   }
 }
-/* 768-72 */
-@media (min-width: 768px) {
-  @container (min-width: 696px) {
-    .footer-top,
-    .footer-bottom {
-      max-width: calc(100% - 96px);
-    }
-  }
-}
-/* 1024-288 */
+
 @media (min-width: 1024px) {
-  @container (min-width: 736px) {
-    .footer-top,
-    .footer-bottom {
-      max-width: var(--sgds-dimension-840);
-    }
+  .footer-top.sidebar,
+  .footer-bottom.sidebar {
+    max-width: var(--sgds-dimension-840);
   }
 }
-/* 1024-72 */
-@media (min-width: 1024px) {
-  @container (min-width: 952px) {
-    .footer-top,
-    .footer-bottom {
-      max-width: var(--sgds-dimension-840);
-    }
-  }
-}
-/* 1280-288 */
+
 @media (min-width: 1280px) {
-  @container (min-width: 992px) {
-    .footer-top,
-    .footer-bottom {
-      max-width: var(--sgds-dimension-888);
-    }
+  .footer-top.sidebar,
+  .footer-bottom.sidebar {
+    max-width: var(--sgds-dimension-888);
   }
 }
-/* 1280-72 */
-@media (min-width: 1280px) {
-  @container (min-width: 1208px) {
-    .footer-top,
-    .footer-bottom {
-      max-width: var(--sgds-dimension-888);
-    }
-  }
-}
-/* 1440-288 */
+
 @media (min-width: 1440px) {
-  @container (min-width: 1152px) {
-    .footer-top,
-    .footer-bottom {
-      max-width: var(--sgds-dimension-1024);
-    }
-  }
-}
-/* 1440-72 */
-@media (min-width: 1440px) {
-  @container (min-width: 1368px) {
-    .footer-top,
-    .footer-bottom {
-      max-width: var(--sgds-dimension-1024);
-    }
+  .footer-top.sidebar,
+  .footer-bottom.sidebar {
+    max-width: var(--sgds-dimension-1024);
   }
 }

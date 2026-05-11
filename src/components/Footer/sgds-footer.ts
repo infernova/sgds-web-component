@@ -50,6 +50,9 @@ export class SgdsFooter extends SgdsElement {
   @property({ type: String })
   termsOfUseHref = "#";
 
+  /** Sets the layout context of the footer. Use "sidebar" when the footer is alongside a collapsible or persistent sidebar. Overlay sidebars should use "default". */
+  @property({ type: String, reflect: true }) layout: "default" | "sidebar" = "default";
+
   /** Used only for SSR to indicate the presence of the `default` slot. */
   @property({ type: Boolean }) hasDefaultSlot = false;
 
@@ -77,7 +80,8 @@ export class SgdsFooter extends SgdsElement {
         <section
           class="${classMap({
             "footer-top": this.hasDefaultSlot || this.hasTitleSlot || this.hasDescriptionSlot || this.hasItemsSlot,
-            "has-content": this.hasDefaultSlot || this.hasItemsSlot
+            "has-content": this.hasDefaultSlot || this.hasItemsSlot,
+            sidebar: this.layout === "sidebar"
           })}"
         >
           <div class="footer-header">
@@ -94,7 +98,7 @@ export class SgdsFooter extends SgdsElement {
                 `}
           </div>
         </section>
-        <section class="footer-bottom">
+        <section class="${classMap({ "footer-bottom": true, sidebar: this.layout === "sidebar" })}">
           <div class="footer-mandatory-links">
             <ul>
               <li>
