@@ -216,6 +216,61 @@ describe("footer layout prop", () => {
   });
 });
 
+describe("footer tone prop", () => {
+  it("defaults to tone='fixed-dark'", async () => {
+    const el = await fixture<SgdsFooter>(html`<sgds-footer></sgds-footer>`);
+    expect(el.tone).to.equal("fixed-dark");
+    expect(el.getAttribute("tone")).to.equal("fixed-dark");
+  });
+
+  it("reflects tone attribute to the host element", async () => {
+    const el = await fixture<SgdsFooter>(html`<sgds-footer tone="neutral"></sgds-footer>`);
+    expect(el.getAttribute("tone")).to.equal("neutral");
+  });
+
+  it("renders mandatory links with tone='fixed-light' when tone='fixed-dark'", async () => {
+    const el = await fixture<SgdsFooter>(html`<sgds-footer></sgds-footer>`);
+    const links = el.shadowRoot?.querySelectorAll<SgdsLink>("sgds-link");
+    links?.forEach(link => {
+      expect(link.tone).to.equal("fixed-light");
+    });
+  });
+
+  it("renders mandatory links with tone='neutral' when tone='neutral'", async () => {
+    const el = await fixture<SgdsFooter>(html`<sgds-footer tone="neutral"></sgds-footer>`);
+    const links = el.shadowRoot?.querySelectorAll<SgdsLink>("sgds-link");
+    links?.forEach(link => {
+      expect(link.tone).to.equal("neutral");
+    });
+  });
+
+  it("propagates tone to sgds-footer-item children", async () => {
+    const el = await fixture<SgdsFooter>(html`
+      <sgds-footer tone="neutral">
+        <sgds-footer-item slot="items">
+          <div slot="title">Title</div>
+          <sgds-link><a href="#">Link</a></sgds-link>
+        </sgds-footer-item>
+      </sgds-footer>
+    `);
+    const footerItem = el.querySelector<SgdsFooterItem>("sgds-footer-item");
+    expect(footerItem?.tone).to.equal("neutral");
+  });
+
+  it("footer-item sets link tone to neutral when its tone is neutral", async () => {
+    const el = await fixture<SgdsFooterItem>(html`
+      <sgds-footer-item tone="neutral">
+        <div slot="title">Title</div>
+        <sgds-link><a href="#">Link</a></sgds-link>
+      </sgds-footer-item>
+    `);
+    const links = el.querySelectorAll<SgdsLink>("sgds-link");
+    links.forEach(l => {
+      expect(l.tone).to.equal("neutral");
+    });
+  });
+});
+
 describe("SgdsFooterItem", () => {
   it("renders with default structure", async () => {
     const el = await fixture<SgdsFooterItem>(html` <sgds-footer-item>

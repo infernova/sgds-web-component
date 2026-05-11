@@ -166,6 +166,25 @@ slot:not([name])::slotted(*) {
   }
 }
 
+/* Neutral tone: light background with default text colors */
+
+:host([tone="neutral"]) .footer {
+  background-color: var(--sgds-bg-default);
+}
+
+:host([tone="neutral"]) slot[name="title"]::slotted(*) {
+  color: var(--sgds-color-default) !important;
+}
+
+:host([tone="neutral"]) slot[name="description"]::slotted(*),
+:host([tone="neutral"]) slot:not([name])::slotted(*) {
+  color: var(--sgds-color-default);
+}
+
+:host([tone="neutral"]) .footer-copyrights {
+  color: var(--sgds-color-default);
+}
+
 /* Sidebar detected: .sidebar class added by JS when a non-overlay sgds-sidebar exists */
 /* Match .sgds-container-sidebar values using media queries (viewport-based, same as grid.css) */
 

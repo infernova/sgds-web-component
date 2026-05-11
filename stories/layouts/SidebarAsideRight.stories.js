@@ -78,20 +78,7 @@ const Template = () => html`
             ></aside>
           </div>
         </div>
-        <footer class="sgds:bg-default">
-          <div class="sgds-container-sidebar sgds:py-layout-md">
-            <div class="sgds:flex sgds:flex-wrap sgds:justify-between sgds:items-center sgds:gap-md">
-              <div class="sgds:flex sgds:flex-wrap sgds:gap-xl">
-                <sgds-link variant="neutral" size="sm"><a href="#">Privacy</a></sgds-link>
-                <sgds-link variant="neutral" size="sm"><a href="#">Terms of Use</a></sgds-link>
-                <sgds-link variant="neutral" size="sm"><a href="#">Contact Us</a></sgds-link>
-              </div>
-              <p class="sgds:text-label-sm sgds:text-subtle sgds:m-0">
-                &copy; ${new Date().getFullYear()}, Government of Singapore
-              </p>
-            </div>
-          </div>
-        </footer>
+        <sgds-footer tone="neutral" layout="sidebar"></sgds-footer>
       </div>
     </div>
   </div>
