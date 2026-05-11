@@ -140,7 +140,9 @@ export class SgdsFooter extends SgdsElement {
                 </sgds-link>
               </li>
               <li>
-                <sgds-link size="sm" tone=${this._linkTone}><a href=${this.privacyHref}>Privacy Statement</a></sgds-link>
+                <sgds-link size="sm" tone=${this._linkTone}
+                  ><a href=${this.privacyHref}>Privacy Statement</a></sgds-link
+                >
               </li>
               <li>
                 <sgds-link size="sm" tone=${this._linkTone}><a href=${this.termsOfUseHref}>Terms of use</a></sgds-link>
