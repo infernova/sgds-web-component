@@ -79,7 +79,7 @@ export const Extended = {
 export const NeutralTone = {
   render: Template.bind({}),
   name: "Neutral Tone",
-  args: {...args, tone: "neutral"},
+  args: { ...args, tone: "neutral" },
   parameters,
   tags: []
 };
