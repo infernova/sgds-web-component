@@ -53,6 +53,7 @@ No CSS styling modifications — custom properties and CSS parts are not exposed
 - ***(default)* slot overrides `items`**: placing content in the *(default)* slot replaces the auto-formatted `items` grid — do not mix both; use `items` slot for standard column layouts.
 - **`copyrightLiner` override**: only change this for statutory boards or entities where the copyright is not "Government of Singapore" — verify with your agency's legal team.
 - **Column link format**: each `<sgds-footer-item>` column uses `<sgds-link><a href="...">Label</a></sgds-link>` — do not use bare `<a>` tags directly.
+- **`layout` prop for sidebar apps**: set `layout="sidebar"` when the footer sits alongside a collapsible or persistent `<sgds-sidebar>`. This adjusts `max-width` to match `.sgds-container-sidebar`. Overlay sidebars do not affect content width, so keep `layout="default"`.
 
 ## Edge Cases
 
@@ -123,6 +124,7 @@ No CSS styling modifications — custom properties and CSS parts are not exposed
 | `privacyHref` | string | `"#"` | URL for the Privacy Statement link |
 | `termsOfUseHref` | string | `"#"` | URL for the Terms of Use link |
 | `copyrightLiner` | string | `"Government of Singapore"` | Copyright entity name shown in the footer bottom bar |
+| `layout` | `"default"` \| `"sidebar"` | `"default"` | Sets the layout context. Use `"sidebar"` when the footer is alongside a collapsible or persistent sidebar. Overlay sidebars should use `"default"` |
 
 ## Slots
 
@@ -154,3 +156,4 @@ None.
 3. The *(default)* slot replaces the entire `items` layout — use only when custom column styling is required.
 4. `copyrightLiner` defaults to `"Government of Singapore"` — override only for statutory boards with different copyright entities.
 5. There are no custom events or public methods on this component.
+6. When generating a sidebar app layout (collapsible or persistent `<sgds-sidebar>`), always add `layout="sidebar"` to `<sgds-footer>`. For overlay sidebars or layouts without a sidebar, omit the attribute or use `layout="default"`.
