@@ -8,7 +8,7 @@ Install SGDS web components locally with the following command
 
 ```js
 
-npm install @govtechsg/sgds-web-component@3.17.0
+npm install @govtechsg/sgds-web-component@3.18.1
 
 ```
 
@@ -20,7 +20,7 @@ import "@govtechsg/sgds-web-component";
 
 ### Step 2: Framework specific setup
 
-Please refer to the respective framework setup before importing the components.
+Refer to the respective framework setup before importing the components.
 
 - [Angular](/docs/frameworks-angular--docs)
 - [Vue](/docs/frameworks-vue--docs)
@@ -53,14 +53,14 @@ This method registers all SGDS elements up front in the Custom Elements Registry
 
 ```js
 // Load global css file
-<link href='https://cdn.jsdelivr.net/npm/@govtechsg/sgds-web-component@3.17.0/themes/day.css' rel='stylesheet' type='text/css' />
-<link href='https://cdn.jsdelivr.net/npm/@govtechsg/sgds-web-component@3.17.0/css/sgds.css' rel='stylesheet' type='text/css' />
+<link href='https://cdn.jsdelivr.net/npm/@govtechsg/sgds-web-component@3.18.1/themes/day.css' rel='stylesheet' type='text/css' />
+<link href='https://cdn.jsdelivr.net/npm/@govtechsg/sgds-web-component@3.18.1/css/sgds.css' rel='stylesheet' type='text/css' />
 
 // it is recommended to load a particular version when using cdn e.g. https://cdn.jsdelivr.net/npm/@govtechsg/sgds-web-component@1.0.2
-<script src="https://cdn.jsdelivr.net/npm/@govtechsg/sgds-web-component@3.17.0" async crossorigin="anonymous" integrity="sha384-I3Qlz/2w7BEDS6tRk01JF0vIVwcMZ9dLML9LM69dfbwAZNamr/QMVIK2S/ts9jcS"></script>
+<script src="https://cdn.jsdelivr.net/npm/@govtechsg/sgds-web-component@3.18.1" async crossorigin="anonymous" integrity="sha384-7/JtH2JEmF1TbWXDUAMMQ1fSd5hZt25oTsU6Gz6fcror30Kep9SYaZX2J9RVHPnz"></script>
 
 //or load a single component e.g. Masthead
-<script src="https://cdn.jsdelivr.net/npm/@govtechsg/sgds-web-component@3.17.0/components/Masthead/index.umd.min.js" async crossorigin="anonymous" integrity="sha384-E79KylNKbLcetOvEpGua4HTBNkhQfVUh2LfbACzab8iYapmUtkK4CWEV+1+sPq7B"></script>
+<script src="https://cdn.jsdelivr.net/npm/@govtechsg/sgds-web-component@3.18.1/components/Masthead/index.umd.min.js" async crossorigin="anonymous" integrity="sha384-5OKa7RaQpYeIsx/ZOXW2ttNUa7ftAEKXiWuSgFRmlXJUaJ1Bvf3etjlCw2qqjia8"></script>
 
 ```
 
