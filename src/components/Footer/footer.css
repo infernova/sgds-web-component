@@ -6,9 +6,6 @@
 .footer-top {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  max-width: calc(100% - 40px);
-  margin-inline: auto;
   padding: var(--sgds-padding-2-xl) var(--sgds-padding-none);
   border-bottom: var(--sgds-border-width-1) solid var(--sgds-border-color-default);
 }
@@ -58,9 +55,6 @@ slot:not([name])::slotted(*) {
 .footer-bottom {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  max-width: calc(100% - 40px);
-  margin-inline: auto;
   gap: var(--sgds-gap-md);
   padding: var(--sgds-padding-2-xl) var(--sgds-padding-none);
 }
@@ -100,21 +94,7 @@ slot:not([name])::slotted(*) {
   line-height: var(--sgds-line-height-2-xs)
 }
 
-/* Non-sidebar (default): match .sgds-container */
-
-@media (min-width: 512px) {
-  .footer-top,
-  .footer-bottom {
-    max-width: calc(100% - 48px);
-  }
-}
-
 @media (min-width: 768px) {
-  .footer-top,
-  .footer-bottom {
-    max-width: calc(100% - 56px);
-  }
-
   .footer-mandatory-links ul {
     flex-direction: row;
     gap: var(--sgds-gap-sm) var(--sgds-gap-xl);
@@ -122,11 +102,6 @@ slot:not([name])::slotted(*) {
 }
 
 @media (min-width: 1024px) {
-  .footer-top,
-  .footer-bottom {
-    max-width: var(--sgds-dimension-888);
-  }
-
   .footer-top {
     padding: var(--sgds-padding-3-xl) var(--sgds-padding-none);
   }
@@ -146,20 +121,8 @@ slot:not([name])::slotted(*) {
 }
 
 @media (min-width: 1280px) {
-  .footer-top,
-  .footer-bottom {
-    max-width: var(--sgds-dimension-1168);
-  }
-
   .footer-mandatory-links {
     flex-direction: row;
-  }
-}
-
-@media (min-width: 1440px) {
-  .footer-top,
-  .footer-bottom {
-    max-width: var(--sgds-dimension-1312);
   }
 }
 
@@ -182,33 +145,3 @@ slot:not([name])::slotted(*) {
   color: var(--sgds-color-default);
 }
 
-/* Sidebar detected: .sidebar class added by JS when a non-overlay sgds-sidebar exists */
-/* Match .sgds-container-sidebar values using media queries (viewport-based, same as grid.css) */
-
-@media (min-width: 768px) {
-  .footer-top.sidebar,
-  .footer-bottom.sidebar {
-    max-width: calc(100% - 96px);
-  }
-}
-
-@media (min-width: 1024px) {
-  .footer-top.sidebar,
-  .footer-bottom.sidebar {
-    max-width: var(--sgds-dimension-840);
-  }
-}
-
-@media (min-width: 1280px) {
-  .footer-top.sidebar,
-  .footer-bottom.sidebar {
-    max-width: var(--sgds-dimension-888);
-  }
-}
-
-@media (min-width: 1440px) {
-  .footer-top.sidebar,
-  .footer-bottom.sidebar {
-    max-width: var(--sgds-dimension-1024);
-  }
-}
