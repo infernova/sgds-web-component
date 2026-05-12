@@ -17,7 +17,9 @@ const copyToClipboard = (token, buttonEl) => {
 export const Breakpoints = () => html`
   <p class="sgds:mb-md sgds:text-body-md">
     Responsive breakpoints use the syntax
-    <code class="sgds:bg-surface-raised sgds:px-xs sgds:py-3-xs sgds:rounded-sm">sgds:&lt;breakpoint&gt;:&lt;utility&gt;</code>
+    <code class="sgds:bg-surface-raised sgds:px-xs sgds:py-3-xs sgds:rounded-sm"
+      >sgds:&lt;breakpoint&gt;:&lt;utility&gt;</code
+    >
     (e.g. <code class="sgds:bg-surface-raised sgds:px-xs sgds:py-3-xs sgds:rounded-sm">sgds:sm:hidden</code>).
   </p>
   <sgds-table>
@@ -139,8 +141,8 @@ export const Breakpoints = () => html`
   <div class="sgds:mb-2-xl"></div>
   <h3 class="sgds:mb-md">Example: Responsive Visibility</h3>
   <p class="sgds:mb-md sgds:text-body-md">
-    Each badge below appears only when the viewport reaches its breakpoint.
-    Resize the browser to see them appear or disappear.
+    Each badge below appears only when the viewport reaches its breakpoint. Resize the browser to see them appear or
+    disappear.
   </p>
   <div class="sgds:flex sgds:flex-wrap sgds:gap-sm">
     <sgds-badge variant="primary" class="sgds:hidden sgds:xs:inline-flex">xs+ (320px)</sgds-badge>
