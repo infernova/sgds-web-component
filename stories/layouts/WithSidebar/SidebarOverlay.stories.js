@@ -1,7 +1,7 @@
 import { html } from "lit";
 
 export default {
-  title: "Layouts/With Sidebar/Aside Right"
+  title: "Layouts/With Sidebar/Overlay"
 };
 
 const placeholderStyle = html`
@@ -20,7 +20,7 @@ const placeholderStyle = html`
 `;
 
 const sidebarNav = html`
-  <sgds-sidebar active="dashboard">
+  <sgds-sidebar variant="overlay" active="dashboard" scrim>
     <div slot="brandName">My App</div>
     <sgds-sidebar-section title="Workspace" name="workspace">
       <sgds-sidebar-item name="dashboard" title="Dashboard">
@@ -67,39 +67,38 @@ const Template = () => html`
         </div>
       </sgds-mainnav>
     </div>
-    <div class="sgds:flex sgds:flex-row sgds:flex-1 sgds:overflow-hidden">
+    <div class="sgds:border-b sgds:border-muted sgds:text-body-sm">
+      <div class="sgds:py-md sgds:px-sm sgds:flex sgds:items-center sgds:gap-layout-md">
+        <sgds-icon-button
+          data-sidebar-toggler="true"
+          size="sm"
+          tone="neutral"
+          variant="ghost"
+          name="sidebar-expand"
+          @click=${() => document.querySelector("sgds-sidebar").toggleCollapsed()}
+        ></sgds-icon-button>
+        <sgds-breadcrumb>
+          <sgds-breadcrumb-item><a href="#">Home</a></sgds-breadcrumb-item>
+          <sgds-breadcrumb-item><a href="#">Section</a></sgds-breadcrumb-item>
+          <sgds-breadcrumb-item active><a href="#">Current Page</a></sgds-breadcrumb-item>
+        </sgds-breadcrumb>
+      </div>
+    </div>
+    <div class="sgds:flex sgds:flex-row sgds:flex-1 sgds:overflow-hidden sgds:relative">
       ${sidebarNav}
       <div class="sgds:flex sgds:flex-col sgds:flex-1 sgds:overflow-y-auto">
-        <div class="sgds-container-sidebar sgds:py-layout-md sgds:flex-1">
-          <div class="sgds-grid sgds:gap-layout-md sgds:items-stretch">
-            <div class="content-placeholder sgds:border sgds:border-muted sgds-col-8 sgds-col-sm-8 sgds-col-lg-8"></div>
-            <aside
-              class="content-placeholder sgds:border sgds:border-muted sgds-col-4 sgds-col-sm-8 sgds-col-lg-4"
-            ></aside>
-          </div>
+        <div class="sgds-container sgds:py-layout-md sgds:flex-1">
+          <div class="content-placeholder sgds:border sgds:border-muted sgds:flex-1"></div>
         </div>
-        <footer class="sgds:bg-default">
-          <div class="sgds-container-sidebar sgds:py-layout-md">
-            <div class="sgds:flex sgds:flex-wrap sgds:justify-between sgds:items-center sgds:gap-md">
-              <div class="sgds:flex sgds:flex-wrap sgds:gap-xl">
-                <sgds-link variant="neutral" size="sm"><a href="#">Privacy</a></sgds-link>
-                <sgds-link variant="neutral" size="sm"><a href="#">Terms of Use</a></sgds-link>
-                <sgds-link variant="neutral" size="sm"><a href="#">Contact Us</a></sgds-link>
-              </div>
-              <p class="sgds:text-label-sm sgds:text-subtle sgds:m-0">
-                &copy; ${new Date().getFullYear()}, Government of Singapore
-              </p>
-            </div>
-          </div>
-        </footer>
+        <sgds-footer tone="neutral"></sgds-footer>
       </div>
     </div>
   </div>
 `;
 
-export const SidebarAsideRight = {
+export const SidebarOverlay = {
   render: Template.bind({}),
-  name: "Aside Right",
+  name: "Overlay",
   args: {},
   parameters: { layout: "fullscreen" },
   tags: ["!autodocs"]
