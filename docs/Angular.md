@@ -55,7 +55,114 @@ import "@govtechsg/sgds-web-component/components/Alert";
 export class AppComponent {}
 ```
 
-## Referencing sgds-web-components in Angular
+## Usage
+
+See Angular's documentation on [using custom elements](https://angular.dev/guide/elements).
+
+### Binding Attributes and Properties
+
+Use Angular's property binding syntax to bind attributes and properties to SGDS web components:
+
+```typescript
+// footer.component.ts
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+
+@Component({
+  selector: "app-footer",
+  templateUrl: "./footer.component.html",
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+})
+export class FooterComponent {
+  footerTitle = "Singapore Design System";
+  footerDescription = "this is a description";
+  lastUpdatedDate = new Date().toDateString();
+  links = [
+    {
+      title: "Column 1",
+      links: [
+        { href: "#1", label: "About Us" },
+        { href: "#2", label: "This is a super long link" }
+      ]
+    },
+    {
+      title: "Column 2",
+      links: [
+        { href: "#1", label: "About Us" },
+        { href: "#2", label: "This is a super long link" }
+      ]
+    }
+  ];
+}
+```
+
+```html
+<!-- footer.component.html -->
+<sgds-footer
+  [title]="footerTitle"
+  [description]="footerDescription"
+  [lastUpdatedDate]="lastUpdatedDate"
+  [links]="links"
+></sgds-footer>
+```
+
+### Listening to Events
+
+Use Angular's event binding syntax with SGDS custom events:
+
+```typescript
+// input.component.ts
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+
+@Component({
+  selector: "app-input",
+  templateUrl: "./input.component.html",
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+})
+export class InputComponent {
+  inputValue = "defaultValue";
+
+  onInput(event: Event) {
+    const target = event.target as HTMLInputElement;
+    this.inputValue = target.value;
+  }
+}
+```
+
+```html
+<!-- input.component.html -->
+<sgds-input
+  [value]="inputValue"
+  (sgds-input)="onInput($event)"
+  placeholder="Enter your name"
+></sgds-input>
+<div>Name: {{ inputValue }}</div>
+```
+
+### Using Slots
+
+Pass content into named or default slots using standard HTML:
+
+```html
+<!-- sidenav.component.html -->
+<sgds-sidenav>
+  <sgds-sidenav-item>
+    <span slot="title">SideNav Item #1</span>
+    <sgds-sidenav-link>sgds-sidenav-link</sgds-sidenav-link>
+    <sgds-sidenav-link href="#" disabled>sgds-sidenav-link</sgds-sidenav-link>
+    <sgds-sidenav-link href="#">sgds-sidenav-link</sgds-sidenav-link>
+  </sgds-sidenav-item>
+  <sgds-sidenav-item>
+    <span slot="title">SideNav Item #2</span>
+    <sgds-sidenav-link href="#">sgds-sidenav-link</sgds-sidenav-link>
+    <sgds-sidenav-link href="#">sgds-sidenav-link</sgds-sidenav-link>
+  </sgds-sidenav-item>
+  <sgds-sidenav-item href="#">
+    <span slot="title">SideNav Item #3</span>
+  </sgds-sidenav-item>
+</sgds-sidenav>
+```
+
+### Referencing sgds-web-components with ViewChild
 
 Use `ViewChild` with a template reference to access component properties and methods programmatically:
 
