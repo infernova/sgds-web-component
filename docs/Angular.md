@@ -2,79 +2,92 @@
 
 Web components are [fully supported in Angular](https://custom-elements-everywhere.com/#angular) and can be used directly.
 
-## Demo app 
-
-Refer to this [stackblitz demo app](https://stackblitz.com/github/clukhei/angular-stepper?file=README.md) on the usage example 
 ## Installation
 
 Locally install the library or use CDN by adding the script tag to entry point of the Angular application (i.e. index.html). Follow instructions in `Installation` and `Imports` documentation section
 
 ## Configuration
 
-Apply CUSTOM_ELEMENTS_SCHEMA as shown below
+Angular requires `CUSTOM_ELEMENTS_SCHEMA` to recognise custom element tags. Add it to the `schemas` array of any standalone component that uses SGDS web components.
 
 ```typescript
-//app.module.ts
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
-import { AppComponent } from "./app.component";
+// app.component.ts
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 
-@NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule],
-  providers: [],
-  bootstrap: [AppComponent],
+@Component({
+  selector: "app-root",
+  templateUrl: "./app.component.html",
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AppModule {}
+export class AppComponent {}
 ```
 
 ## Importing the library
 
-When using a several of our components it can be more convenient to import the entire library once in App Module and use it throughout the application
+Import the library once in your root component (or in `main.ts`) to register all custom elements globally:
 
 ```typescript
-//app.module.ts
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
-import { BrowserModule } from "@angular/platform-browser";
-import { AppComponent } from "./app.component";
+// app.component.ts
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import "@govtechsg/sgds-web-component";
 
-@NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule],
-  providers: [],
-  bootstrap: [AppComponent],
+@Component({
+  selector: "app-root",
+  templateUrl: "./app.component.html",
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AppModule {}
+export class AppComponent {}
 ```
-## Referencing sgds-web-components in Angular
+
+Alternatively, import individual components for smaller bundles:
 
 ```typescript
-//alert.component.ts
-import { Component, ElementRef, ViewChild } from '@angular/core';
-import { SgdsAlert } from '@govtechsg/sgds-web-component';
+// app.component.ts
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+import "@govtechsg/sgds-web-component/components/Button";
+import "@govtechsg/sgds-web-component/components/Alert";
 
 @Component({
-  selector: 'app-alert',
-  templateUrl: './alert.component.html',
-  styleUrls: ['./alert.component.css']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+})
+export class AppComponent {}
+```
+
+## Referencing sgds-web-components in Angular
+
+Use `ViewChild` with a template reference to access component properties and methods programmatically:
+
+```typescript
+// alert.component.ts
+import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, ViewChild } from "@angular/core";
+import SgdsAlert from "@govtechsg/sgds-web-component/components/Alert/sgds-alert.js";
+
+@Component({
+  selector: "app-alert",
+  templateUrl: "./alert.component.html",
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AlertComponent {
-
-  @ViewChild('alert')
-  alert? : ElementRef<SgdsAlert>
+  @ViewChild("alert")
+  alert?: ElementRef<SgdsAlert>;
 
   showAlert() {
-    this.alert?.nativeElement.show()
+    if (this.alert) {
+      this.alert.nativeElement.show = true;
+    }
   }
-  alertShowState?: boolean = false
 
+  closeAlert() {
+    this.alert?.nativeElement.close();
+  }
 }
+```
 
-//alert.component.html
-<sgds-button (click)="showAlert()">{{buttonText}}</sgds-button>
-<sgds-alert #alert [show]="alertShowState">Alerting</sgds-alert>
-
+```html
+<!-- alert.component.html -->
+<sgds-button (click)="showAlert()">Show Alert</sgds-button>
+<sgds-button (click)="closeAlert()">Close Alert</sgds-button>
+<sgds-alert #alert>This is an alert</sgds-alert>
 ```
