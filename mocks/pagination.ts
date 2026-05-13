@@ -1,7 +1,7 @@
 import { html, LitElement } from "lit";
 import { customElement } from "lit/decorators.js";
-import { SgdsTable } from "../src/components/Table/sgds-table";
-import { SgdsPagination } from "../src/components/Pagination/sgds-pagination";
+import { SgdsTable } from "../lib/components/Table/sgds-table";
+import { SgdsPagination } from "../lib/components/Pagination/sgds-pagination";
 
 interface Post {
   id: number | string;
@@ -65,8 +65,8 @@ export class MockPagination extends LitElement {
       .slice(indexOfFirstItem, indexOfLastItem)
       .map(post => [post.id, post.title, post.body]);
 
-    const table = this.shadowRoot?.querySelector("sgds-table") as SgdsTable;
-    const pagination = this.shadowRoot?.querySelector("sgds-pagination") as SgdsPagination;
+    const table = this.shadowRoot?.querySelector<SgdsTable>("sgds-table");
+    const pagination = this.shadowRoot?.querySelector<SgdsPagination>("sgds-pagination");
 
     if (table && pagination) {
       table.rowHeader = this.rowHeader;
