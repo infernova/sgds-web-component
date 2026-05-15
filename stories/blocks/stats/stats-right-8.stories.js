@@ -123,7 +123,8 @@ const Template = () => html`
 export default {
   title: "Blocks/Stats",
   tags: ["!autodocs"],
-  parameters: { layout: "padded" }
+  parameters: {
+    controls: { disable: true }, actions: { disable: true }, interactions: { disable: true }, layout: "padded" }
 };
 
 export const StatsRight8 = {

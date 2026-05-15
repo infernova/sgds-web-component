@@ -14,7 +14,7 @@ const H6Template = () => html`
 export default {
   title: "Patterns/Typography/Content",
   tags: ["!autodocs"],
-  parameters: { layout: "padded" }
+  parameters: { controls: { disable: true }, actions: { disable: true }, interactions: { disable: true }, layout: "padded" }
 };
 
 export const H6 = {

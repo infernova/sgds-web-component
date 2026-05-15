@@ -281,6 +281,7 @@ export default {
   title: "Templates/Application Management/Application list",
   tags: ["!autodocs"],
   parameters: {
+    controls: { disable: true }, actions: { disable: true }, interactions: { disable: true },
     layout: "fullscreen"
   }
 };

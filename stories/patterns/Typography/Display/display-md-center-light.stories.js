@@ -22,7 +22,7 @@ const DisplayMdCenterLightTemplate = () => html`
 export default {
   title: "Patterns/Typography/Display",
   tags: ["!autodocs"],
-  parameters: { layout: "padded" }
+  parameters: { controls: { disable: true }, actions: { disable: true }, interactions: { disable: true }, layout: "padded" }
 };
 
 export const DisplayMediumCenterLight = {
