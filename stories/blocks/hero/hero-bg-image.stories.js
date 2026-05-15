@@ -62,7 +62,11 @@ export default {
   title: "Blocks/Hero",
   tags: ["!autodocs"],
   parameters: {
-    controls: { disable: true }, actions: { disable: true }, interactions: { disable: true }, layout: "padded" }
+    controls: { disable: true },
+    actions: { disable: true },
+    interactions: { disable: true },
+    layout: "padded"
+  }
 };
 
 export const HeroBgImage = {

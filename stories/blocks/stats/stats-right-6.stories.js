@@ -124,7 +124,11 @@ export default {
   title: "Blocks/Stats",
   tags: ["!autodocs"],
   parameters: {
-    controls: { disable: true }, actions: { disable: true }, interactions: { disable: true }, layout: "padded" }
+    controls: { disable: true },
+    actions: { disable: true },
+    interactions: { disable: true },
+    layout: "padded"
+  }
 };
 
 export const StatsRight6 = {

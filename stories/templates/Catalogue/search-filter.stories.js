@@ -426,7 +426,9 @@ export default {
   title: "Templates/Catalogue/Search & Filter",
   tags: ["!autodocs"],
   parameters: {
-    controls: { disable: true }, actions: { disable: true }, interactions: { disable: true },
+    controls: { disable: true },
+    actions: { disable: true },
+    interactions: { disable: true },
     layout: "fullscreen"
   }
 };

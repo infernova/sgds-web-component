@@ -27,7 +27,12 @@ const ULBodyMdTemplate = () => html`
 export default {
   title: "Patterns/Typography/List",
   tags: ["!autodocs"],
-  parameters: { controls: { disable: true }, actions: { disable: true }, interactions: { disable: true }, layout: "padded" }
+  parameters: {
+    controls: { disable: true },
+    actions: { disable: true },
+    interactions: { disable: true },
+    layout: "padded"
+  }
 };
 
 export const ULBodyMedium = {

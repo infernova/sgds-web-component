@@ -329,7 +329,9 @@ export default {
   title: "Templates/Landing/Basic",
   tags: ["!autodocs"],
   parameters: {
-    controls: { disable: true }, actions: { disable: true }, interactions: { disable: true },
+    controls: { disable: true },
+    actions: { disable: true },
+    interactions: { disable: true },
     layout: "fullscreen"
   }
 };

@@ -64,7 +64,11 @@ export default {
   title: "Blocks/Feature",
   tags: ["!autodocs"],
   parameters: {
-    controls: { disable: true }, actions: { disable: true }, interactions: { disable: true }, layout: "padded" }
+    controls: { disable: true },
+    actions: { disable: true },
+    interactions: { disable: true },
+    layout: "padded"
+  }
 };
 
 export const FeatureImageLeft66 = {
