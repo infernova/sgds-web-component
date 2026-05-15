@@ -44,7 +44,12 @@ const Template = () => html`
               <sgds-icon name="plus" slot="leftIcon"></sgds-icon>
               Create application
             </sgds-button>
-            <sgds-icon-button name="plus" variant="primary" ariaLabel="Create applications" class="sgds:md:hidden"></sgds-icon-button>
+            <sgds-icon-button
+              name="plus"
+              variant="primary"
+              ariaLabel="Create applications"
+              class="sgds:md:hidden"
+            ></sgds-icon-button>
           </div>
         </div>
 
@@ -148,69 +153,69 @@ const Template = () => html`
 
             <!-- Table -->
             <div class="sgds:overflow-x-auto sgds:min-w-0">
-            <sgds-table>
-              <sgds-table-row>
-                <sgds-table-head>Application name</sgds-table-head>
-                <sgds-table-head>Organisation</sgds-table-head>
-                <sgds-table-head>Environment</sgds-table-head>
-                <sgds-table-head>Status</sgds-table-head>
-                <sgds-table-head>Actions</sgds-table-head>
-              </sgds-table-row>
-              <sgds-table-row>
-                <sgds-table-cell
-                  ><sgds-link><a href="#">APEX Gateway v2.1.0</a></sgds-link></sgds-table-cell
-                >
-                <sgds-table-cell>[GVT] APEX</sgds-table-cell>
-                <sgds-table-cell>Production</sgds-table-cell>
-                <sgds-table-cell><sgds-badge variant="success" outlined>Active</sgds-badge></sgds-table-cell>
-                <sgds-table-cell><sgds-button variant="ghost" size="sm">View</sgds-button></sgds-table-cell>
-              </sgds-table-row>
-              <sgds-table-row>
-                <sgds-table-cell
-                  ><sgds-link><a href="#">MyInfo Bridge v1.4.0</a></sgds-link></sgds-table-cell
-                >
-                <sgds-table-cell>[GVT] NDI</sgds-table-cell>
-                <sgds-table-cell>Staging</sgds-table-cell>
-                <sgds-table-cell><sgds-badge variant="warning" outlined>Pending</sgds-badge></sgds-table-cell>
-                <sgds-table-cell><sgds-button variant="ghost" size="sm">View</sgds-button></sgds-table-cell>
-              </sgds-table-row>
-              <sgds-table-row>
-                <sgds-table-cell
-                  ><sgds-link><a href="#">FormSG Webhook v3.0.0</a></sgds-link></sgds-table-cell
-                >
-                <sgds-table-cell>[GVT] OGP</sgds-table-cell>
-                <sgds-table-cell>Production</sgds-table-cell>
-                <sgds-table-cell><sgds-badge variant="success" outlined>Active</sgds-badge></sgds-table-cell>
-                <sgds-table-cell><sgds-button variant="ghost" size="sm">View</sgds-button></sgds-table-cell>
-              </sgds-table-row>
-              <sgds-table-row>
-                <sgds-table-cell
-                  ><sgds-link><a href="#">SingPass Auth v1.2.0</a></sgds-link></sgds-table-cell
-                >
-                <sgds-table-cell>[GVT] GDS</sgds-table-cell>
-                <sgds-table-cell>Production</sgds-table-cell>
-                <sgds-table-cell><sgds-badge variant="danger" outlined>Rejected</sgds-badge></sgds-table-cell>
-                <sgds-table-cell><sgds-button variant="ghost" size="sm">View</sgds-button></sgds-table-cell>
-              </sgds-table-row>
-              <sgds-table-row>
-                <sgds-table-cell
-                  ><sgds-link><a href="#">Data.gov Sync v2.0.0</a></sgds-link></sgds-table-cell
-                >
-                <sgds-table-cell>[GVT] SNDGO</sgds-table-cell>
-                <sgds-table-cell>Development</sgds-table-cell>
-                <sgds-table-cell><sgds-badge variant="neutral" outlined>Suspended</sgds-badge></sgds-table-cell>
-                <sgds-table-cell><sgds-button variant="ghost" size="sm">View</sgds-button></sgds-table-cell>
-              </sgds-table-row>
-              <sgds-table-row>
-                <sgds-table-cell
-                  ><sgds-link><a href="#">CorpPass Verify v1.0.0</a></sgds-link></sgds-table-cell
-                >
-                <sgds-table-cell>[GVT] ACRA</sgds-table-cell>
-                <sgds-table-cell>Staging</sgds-table-cell>
-                <sgds-table-cell><sgds-badge variant="success" outlined>Active</sgds-badge></sgds-table-cell>
-                <sgds-table-cell><sgds-button variant="ghost" size="sm">View</sgds-button></sgds-table-cell>
-              </sgds-table-row>
-            </sgds-table>
+              <sgds-table>
+                <sgds-table-row>
+                  <sgds-table-head>Application name</sgds-table-head>
+                  <sgds-table-head>Organisation</sgds-table-head>
+                  <sgds-table-head>Environment</sgds-table-head>
+                  <sgds-table-head>Status</sgds-table-head>
+                  <sgds-table-head>Actions</sgds-table-head>
+                </sgds-table-row>
+                <sgds-table-row>
+                  <sgds-table-cell
+                    ><sgds-link><a href="#">APEX Gateway v2.1.0</a></sgds-link></sgds-table-cell
+                  >
+                  <sgds-table-cell>[GVT] APEX</sgds-table-cell>
+                  <sgds-table-cell>Production</sgds-table-cell>
+                  <sgds-table-cell><sgds-badge variant="success" outlined>Active</sgds-badge></sgds-table-cell>
+                  <sgds-table-cell><sgds-button variant="ghost" size="sm">View</sgds-button></sgds-table-cell>
+                </sgds-table-row>
+                <sgds-table-row>
+                  <sgds-table-cell
+                    ><sgds-link><a href="#">MyInfo Bridge v1.4.0</a></sgds-link></sgds-table-cell
+                  >
+                  <sgds-table-cell>[GVT] NDI</sgds-table-cell>
+                  <sgds-table-cell>Staging</sgds-table-cell>
+                  <sgds-table-cell><sgds-badge variant="warning" outlined>Pending</sgds-badge></sgds-table-cell>
+                  <sgds-table-cell><sgds-button variant="ghost" size="sm">View</sgds-button></sgds-table-cell>
+                </sgds-table-row>
+                <sgds-table-row>
+                  <sgds-table-cell
+                    ><sgds-link><a href="#">FormSG Webhook v3.0.0</a></sgds-link></sgds-table-cell
+                  >
+                  <sgds-table-cell>[GVT] OGP</sgds-table-cell>
+                  <sgds-table-cell>Production</sgds-table-cell>
+                  <sgds-table-cell><sgds-badge variant="success" outlined>Active</sgds-badge></sgds-table-cell>
+                  <sgds-table-cell><sgds-button variant="ghost" size="sm">View</sgds-button></sgds-table-cell>
+                </sgds-table-row>
+                <sgds-table-row>
+                  <sgds-table-cell
+                    ><sgds-link><a href="#">SingPass Auth v1.2.0</a></sgds-link></sgds-table-cell
+                  >
+                  <sgds-table-cell>[GVT] GDS</sgds-table-cell>
+                  <sgds-table-cell>Production</sgds-table-cell>
+                  <sgds-table-cell><sgds-badge variant="danger" outlined>Rejected</sgds-badge></sgds-table-cell>
+                  <sgds-table-cell><sgds-button variant="ghost" size="sm">View</sgds-button></sgds-table-cell>
+                </sgds-table-row>
+                <sgds-table-row>
+                  <sgds-table-cell
+                    ><sgds-link><a href="#">Data.gov Sync v2.0.0</a></sgds-link></sgds-table-cell
+                  >
+                  <sgds-table-cell>[GVT] SNDGO</sgds-table-cell>
+                  <sgds-table-cell>Development</sgds-table-cell>
+                  <sgds-table-cell><sgds-badge variant="neutral" outlined>Suspended</sgds-badge></sgds-table-cell>
+                  <sgds-table-cell><sgds-button variant="ghost" size="sm">View</sgds-button></sgds-table-cell>
+                </sgds-table-row>
+                <sgds-table-row>
+                  <sgds-table-cell
+                    ><sgds-link><a href="#">CorpPass Verify v1.0.0</a></sgds-link></sgds-table-cell
+                  >
+                  <sgds-table-cell>[GVT] ACRA</sgds-table-cell>
+                  <sgds-table-cell>Staging</sgds-table-cell>
+                  <sgds-table-cell><sgds-badge variant="success" outlined>Active</sgds-badge></sgds-table-cell>
+                  <sgds-table-cell><sgds-button variant="ghost" size="sm">View</sgds-button></sgds-table-cell>
+                </sgds-table-row>
+              </sgds-table>
             </div>
 
             <!-- Pagination -->
@@ -224,7 +229,9 @@ const Template = () => html`
           <div class="sgds:flex sgds:flex-col sgds:gap-2-xl">
             <!-- Status -->
             <div class="sgds:flex sgds:flex-col sgds:gap-text-xs">
-              <div class="sgds:text-label-md sgds:font-semibold sgds:leading-xs sgds:tracking-normal sgds:text-label-default">
+              <div
+                class="sgds:text-label-md sgds:font-semibold sgds:leading-xs sgds:tracking-normal sgds:text-label-default"
+              >
                 Status
               </div>
               <sgds-checkbox-group>
@@ -237,7 +244,9 @@ const Template = () => html`
 
             <!-- Environment -->
             <div class="sgds:flex sgds:flex-col sgds:gap-text-xs">
-              <div class="sgds:text-label-md sgds:font-semibold sgds:leading-xs sgds:tracking-normal sgds:text-label-default">
+              <div
+                class="sgds:text-label-md sgds:font-semibold sgds:leading-xs sgds:tracking-normal sgds:text-label-default"
+              >
                 Environment
               </div>
               <sgds-checkbox-group>
@@ -249,7 +258,9 @@ const Template = () => html`
 
             <!-- API type -->
             <div class="sgds:flex sgds:flex-col sgds:gap-text-xs">
-              <div class="sgds:text-label-md sgds:font-semibold sgds:leading-xs sgds:tracking-normal sgds:text-label-default">
+              <div
+                class="sgds:text-label-md sgds:font-semibold sgds:leading-xs sgds:tracking-normal sgds:text-label-default"
+              >
                 API type
               </div>
               <sgds-checkbox-group>

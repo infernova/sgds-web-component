@@ -363,7 +363,9 @@ const Template = () => html`
         <div class="sgds:flex sgds:flex-col sgds:gap-2-xl">
           <!-- Filter: Programme type -->
           <div class="sgds:flex sgds:flex-col sgds:gap-xs">
-            <div class="sgds:text-subtitle-sm sgds:font-semibold sgds:leading-2-xs sgds:tracking-normal sgds:text-heading-default">
+            <div
+              class="sgds:text-subtitle-sm sgds:font-semibold sgds:leading-2-xs sgds:tracking-normal sgds:text-heading-default"
+            >
               Programme type
             </div>
             <sgds-checkbox-group>
@@ -376,7 +378,9 @@ const Template = () => html`
 
           <!-- Filter: Sessions -->
           <div class="sgds:flex sgds:flex-col sgds:gap-xs">
-            <div class="sgds:text-subtitle-sm sgds:font-semibold sgds:leading-2-xs sgds:tracking-normal sgds:text-heading-default">
+            <div
+              class="sgds:text-subtitle-sm sgds:font-semibold sgds:leading-2-xs sgds:tracking-normal sgds:text-heading-default"
+            >
               Sessions
             </div>
             <sgds-checkbox-group>
@@ -387,7 +391,9 @@ const Template = () => html`
 
           <!-- Filter: Track -->
           <div class="sgds:flex sgds:flex-col sgds:gap-xs">
-            <div class="sgds:text-subtitle-sm sgds:font-semibold sgds:leading-2-xs sgds:tracking-normal sgds:text-heading-default">
+            <div
+              class="sgds:text-subtitle-sm sgds:font-semibold sgds:leading-2-xs sgds:tracking-normal sgds:text-heading-default"
+            >
               Track
             </div>
             <sgds-checkbox-group>
@@ -399,7 +405,9 @@ const Template = () => html`
 
           <!-- Filter: Event hall -->
           <div class="sgds:flex sgds:flex-col sgds:gap-xs">
-            <div class="sgds:text-subtitle-sm sgds:font-semibold sgds:leading-2-xs sgds:tracking-normal sgds:text-heading-default">
+            <div
+              class="sgds:text-subtitle-sm sgds:font-semibold sgds:leading-2-xs sgds:tracking-normal sgds:text-heading-default"
+            >
               Event hall
             </div>
             <sgds-checkbox-group>
